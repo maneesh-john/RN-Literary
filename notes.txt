@@ -2,3 +2,10 @@ Api URL: https://greve-chocolatine-14280.herokuapp.com
 
 Postman collection: https://www.getpostman.com/collections/1b002cddc52671a7396b
 
+RN get location: https://github.com/douglasjunior/react-native-get-location
+
+Formik: https://formik.org/docs/tutorial
+
+Yup: https://github.com/jquense/yup
+
+AsyncStorage: https://github.com/react-native-async-storage/async-storage
