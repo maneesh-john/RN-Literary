@@ -63,6 +63,7 @@ const Login: React.FC<Props> = () => {
               onBlur={handleBlur("password")}
               errorText={errors.password}
               touched={touched.password}
+              secureEntry
             />
             <Button
               title="Submit"

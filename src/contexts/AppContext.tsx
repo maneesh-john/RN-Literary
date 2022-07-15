@@ -16,7 +16,6 @@ export const initState = {
   setLoading: (l: boolean) => {},
   setUser: (u: UserData) => {}
 }
-
 export const AppContext = createContext<Context>(initState);
 
 type Props = {
@@ -24,11 +23,12 @@ type Props = {
 }
 
 const AppProvider: React.FC<Props> = ({ children }) => {
-
+  
   const [userData, setUserData] = useState<UserData>(initState.user);
   const [isLoading, setIsLoading] = useState<boolean>(initState.loading);
   const loadStatus = useRef<boolean>(false);
-
+  
+  console.log("context", userData)
   const setUser = (user: UserData) => {
     setUserData(user);
   }

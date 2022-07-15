@@ -61,7 +61,8 @@ const styles = StyleSheet.create({
   title: {
     color: colors.white,
     fontSize: 22,
-    textAlign: "center"
+    textAlign: "center",
+    textTransform: "capitalize"
   },
   backButton: {
     position: "absolute",

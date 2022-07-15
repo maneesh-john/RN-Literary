@@ -1,19 +1,21 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import UserHome from "../screens/auth/UserHome";
-import Settings from "../screens/auth/Settings";
-import TabbarIcon from "../components/TabbarIcon";
 import { colors } from "../utils/colors";
+import TabbarIcon from "../components/TabbarIcon";
+import UserHome from "../screens/auth/UserHome";
+import Settings from "./user/SettingsStack";
+import Books from "./user/BooksStack";
+import Orders from "../screens/auth/Orders";
 
-const options = {
+const options = (tab: string) => ({
   headerShown: false,
-  tabBarIcon: TabbarIcon,
+  tabBarIcon: (p: { focused: boolean }) => <TabbarIcon tab={tab} focused={p.focused} />,
   tabBarLabelStyle: {
-    color: colors.primary,
+    color: colors.dullText,
     fontSize: 12
   }
-};
+});
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -24,12 +26,22 @@ const UserStack: React.FC = () => {
       <Screen
         name="Home"
         component={UserHome}
-        options={options}
+        options={options("home")}
+      />
+      <Screen
+        name="Books"
+        component={Books}
+        options={options("books")}
+      />
+      <Screen
+        name="Orders"
+        component={Orders}
+        options={options("orders")}
       />
       <Screen
         name="Settings"
         component={Settings}
-        options={options}
+        options={options("settings")}
       />
     </Navigator>
   );
